@@ -9,11 +9,7 @@ public class PlayerStateMachine : StateMachine
 
     void Start()
     {
-        
+        SwitchState(new PlayerMoveState(this));
     }
 
-    void Update()
-    {
-        
-    }
 }
