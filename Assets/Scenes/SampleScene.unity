@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &313461970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1106729726855731879, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
+  m_PrefabInstance: {fileID: 6895162138002853771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5eb80d8e62d9d145bb50fb783c0f731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +593,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.0935946, y: 0.0000000074484108, z: -6.944485e-10, w: 0.9956104}
+  m_LocalRotation: {x: 0.093594596, y: -5.789705e-10, z: -5.442183e-11, w: 0.9956104}
   m_LocalPosition: {x: 0, y: 1.73, z: -3.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -844,23 +855,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.39222068
+      value: 0.98395354
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12833117
+      value: 0.17842482
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.86571425
+      value: 0.000000007705198
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.28325415
+      value: -0.0000000013972192
       objectReference: {fileID: 0}
     - target: {fileID: 1106729726855731879, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_Targets.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1106729726855731879, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_Targets.Array.data[0].radius
@@ -928,15 +939,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3331262654998478440, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1513202
+      value: -0.00000006264684
       objectReference: {fileID: 0}
     - target: {fileID: 3331262654998478440, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7721177
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 3331262654998478440, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.2577252
+      value: 4.2720017
       objectReference: {fileID: 0}
     - target: {fileID: 3706336779445771228, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_MaximumFOV
@@ -968,20 +979,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.027359582
+      value: -0.02735959
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000072793167
+      value: -8.6105653e-16
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015882997
+      value: 2.4444474e-16
       objectReference: {fileID: 0}
     - target: {fileID: 7922785019877668694, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_Name
       value: Player Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 8564222052943233347, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
+      propertyPath: targetGroup
+      value: 
+      objectReference: {fileID: 313461970}
     - target: {fileID: 8615222623861342137, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 0
