@@ -15,14 +15,17 @@ public class TargetLocker : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.TryGetComponent<Target>(out Target target)) 
-			targets.Add(target);
+		if (!other.TryGetComponent<Target>(out Target target)) return;
+
+		targets.Add(target);
+		target.OnDestroyed += RemoveTarget;
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.TryGetComponent<Target>(out Target target)) 
-			targets.Remove(target);
+		if (!other.TryGetComponent<Target>(out Target target)) return;
+
+		RemoveTarget(target);
 	}
 
 	public bool SelectTarget()
@@ -39,5 +42,17 @@ public class TargetLocker : MonoBehaviour
 
 		targetGroup.RemoveMember(CurrentTarget.transform);
 		CurrentTarget = null;
+	}
+
+	private void RemoveTarget(Target target)
+    {
+		if(CurrentTarget == target)
+        {
+            targetGroup.RemoveMember(CurrentTarget.transform);
+			CurrentTarget=null;
+        }
+
+		targets.Remove(target);
+		target.OnDestroyed -= RemoveTarget;
 	}
 }
