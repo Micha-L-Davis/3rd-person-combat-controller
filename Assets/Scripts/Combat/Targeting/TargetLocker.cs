@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TargetLocker : MonoBehaviour
 {
+    [SerializeField]
     private List<Target> targets = new List<Target>();
 
     private void OnTriggerEnter(Collider other)

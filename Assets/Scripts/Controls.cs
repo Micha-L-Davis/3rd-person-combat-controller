@@ -64,13 +64,13 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Zoom"",
-                    ""type"": ""Value"",
-                    ""id"": ""026e1221-8823-43c2-a81d-0b45190cc21c"",
-                    ""expectedControlType"": ""Double"",
+                    ""name"": ""Target"",
+                    ""type"": ""Button"",
+                    ""id"": ""2cd11bdb-bd52-4843-bfed-f512055e4b02"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -208,12 +208,23 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""392ba8aa-4a0b-4749-ba60-7f4508b64848"",
-                    ""path"": ""<Mouse>/scroll"",
+                    ""id"": ""e151d35b-a5ff-42e2-b12c-f99a76eb2f9e"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
-                    ""action"": ""Zoom"",
+                    ""action"": ""Target"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18bd0d39-07bc-4d72-a11c-3489ef8e78bc"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Target"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -256,7 +267,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
+        m_Player_Target = m_Player.FindAction("Target", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -320,7 +331,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dodge;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Zoom;
+    private readonly InputAction m_Player_Target;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -329,7 +340,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
+        public InputAction @Target => m_Wrapper.m_Player_Target;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -351,9 +362,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Zoom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
-                @Zoom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
-                @Zoom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnZoom;
+                @Target.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTarget;
+                @Target.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTarget;
+                @Target.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTarget;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -370,9 +381,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Zoom.started += instance.OnZoom;
-                @Zoom.performed += instance.OnZoom;
-                @Zoom.canceled += instance.OnZoom;
+                @Target.started += instance.OnTarget;
+                @Target.performed += instance.OnTarget;
+                @Target.canceled += instance.OnTarget;
             }
         }
     }
@@ -401,6 +412,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnDodge(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnZoom(InputAction.CallbackContext context);
+        void OnTarget(InputAction.CallbackContext context);
     }
 }

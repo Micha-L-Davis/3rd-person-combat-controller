@@ -15,6 +15,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField]
     public float RotationSmoothing { get; private set; }
     public Transform MainCameraTransform { get; private set; }
+    private bool isTargeting;
 
 
     void Start()
@@ -23,5 +24,6 @@ public class PlayerStateMachine : StateMachine
 
         SwitchState(new PlayerFreeLookState(this));
     }
+
 
 }

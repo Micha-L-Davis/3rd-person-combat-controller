@@ -8,6 +8,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public event Action JumpEvent;
     public event Action DodgeEvent;
+    public event Action TargetEvent;
 
     public Vector2 MovementValue { get; private set; }
 
@@ -48,8 +49,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         
     }
 
-    public void OnZoom(InputAction.CallbackContext context)
+    public void OnTarget(InputAction.CallbackContext context)
     {
-
+        if (!context.performed) return;
+        TargetEvent?.Invoke();
     }
 }
