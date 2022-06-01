@@ -58,7 +58,8 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void EngageTarget()
     {
-        stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+        if (stateMachine.TargetLocker.SelectTarget())
+            stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
 
 }
