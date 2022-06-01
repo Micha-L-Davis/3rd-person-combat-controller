@@ -47,4 +47,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         
     }
+
+    public void OnZoom(InputAction.CallbackContext context)
+    {
+
+    }
 }
