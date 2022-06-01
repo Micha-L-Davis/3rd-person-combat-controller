@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 6968237616663644792}
   <Controller>k__BackingField: {fileID: 3431473817171562080}
+  <TargetLocker>k__BackingField: {fileID: 5940906719751655130}
   <Animator>k__BackingField: {fileID: 7054561400634586491}
   <FreeLookMovementSpeed>k__BackingField: 25
   <RotationSmoothing>k__BackingField: 0
@@ -506,6 +507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5955717469f2c4e8cc3a8d8ee1acf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targets: []
+  <CurrentTarget>k__BackingField: {fileID: 0}
 --- !u!1 &6968246440787000999
 GameObject:
   m_ObjectHideFlags: 0

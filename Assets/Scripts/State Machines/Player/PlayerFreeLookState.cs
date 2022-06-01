@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
 {
-    private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+    private readonly int freeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+    private readonly int fargetingBlendTreeHash = Animator.StringToHash("Targeting Blend Tree");
     private const float AnimatorDampTime = 0.1f;
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
     public override void Enter()
@@ -19,11 +20,11 @@ public class PlayerFreeLookState : PlayerBaseState
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
+            stateMachine.Animator.SetFloat(freeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
             return;
         }
 
-        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
+        stateMachine.Animator.SetFloat(freeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
         FaceMovementDirection(movement, deltaTime);
     }
 
@@ -59,7 +60,10 @@ public class PlayerFreeLookState : PlayerBaseState
     private void EngageTarget()
     {
         if (stateMachine.TargetLocker.SelectTarget())
+        {
+            stateMachine.Animator.Play(fargetingBlendTreeHash);
             stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+        }
     }
 
 }

@@ -557,7 +557,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 65
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -582,8 +582,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.12833117, y: 0.86571425, z: -0.28325415, w: 0.39222068}
-  m_LocalPosition: {x: 0, y: 2.73, z: -4}
+  m_LocalRotation: {x: 0.0935946, y: 0.0000000074484108, z: -6.944485e-10, w: 0.9956104}
+  m_LocalPosition: {x: 0, y: 1.73, z: -3.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -832,15 +832,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.5638227
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.73
+      value: 9.073687
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 11.884703
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.w
@@ -948,23 +948,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6895162137264887234, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6895162137582484136, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000042186605
+      value: -0.00000000421866
       objectReference: {fileID: 0}
     - target: {fileID: 6895162137582484136, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.4061114e-10
+      value: 8.40611e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6895162138390250550, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000000418534
+      value: -0.000000004185342
       objectReference: {fileID: 0}
     - target: {fileID: 6895162138390250550, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -9.932988e-10
+      value: 9.932991e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.x
@@ -981,6 +981,10 @@ PrefabInstance:
     - target: {fileID: 7922785019877668694, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_Name
       value: Player Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615222623861342137, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
+      propertyPath: m_ChildCameras.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8826941226303857273, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_FollowOffset.y

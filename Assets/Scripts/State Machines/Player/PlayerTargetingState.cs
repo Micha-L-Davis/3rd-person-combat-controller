@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
+    private readonly int freeLookBlendTreeHash = Animator.StringToHash("Free Look Blend Tree");
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine) {}
 
     public override void Enter()
@@ -24,6 +25,8 @@ public class PlayerTargetingState : PlayerBaseState
 
     private void DisengageTarget()
     {
+        stateMachine.Animator.Play(freeLookBlendTreeHash);
+        stateMachine.TargetLocker.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 
