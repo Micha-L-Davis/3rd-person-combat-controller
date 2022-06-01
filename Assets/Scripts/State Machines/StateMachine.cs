@@ -10,4 +10,11 @@ public class StateMachine : MonoBehaviour
     {
         currentState?.Tick(Time.deltaTime);
     }
+
+    public void SwitchState(State state)
+    {
+        currentState?.Exit();
+        currentState = state;
+        currentState?.Enter();
+    }
 }
