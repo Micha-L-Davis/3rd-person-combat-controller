@@ -9,12 +9,19 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField]
     public CharacterController Controller { get; private set; }
     [field: SerializeField]
-    public float MovementSpeed { get; private set; }
+    public Animator Animator { get; private set; }
+    [field: SerializeField]
+    public float FreeLookMovementSpeed { get; private set; }
+    [field: SerializeField]
+    public float RotationSmoothing { get; private set; }
+    public Transform MainCameraTransform { get; private set; }
 
 
     void Start()
     {
-        SwitchState(new PlayerMoveState(this));
+        MainCameraTransform = Camera.main.transform;
+
+        SwitchState(new PlayerFreeLookState(this));
     }
 
 }
