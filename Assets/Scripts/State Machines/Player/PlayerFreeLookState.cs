@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerFreeLookState : PlayerBaseState
 {
     private readonly int _freeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
-    //private readonly int _targetingBlendTreeHash = Animator.StringToHash("Targeting Blend Tree");
     private readonly int _freeLookBlendTreeHash = Animator.StringToHash("Free Look Blend Tree");
     private const float _animatorDampTime = 0.1f;
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
@@ -69,7 +68,6 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         if (stateMachine.TargetLocker.SelectTarget())
         {
-            //stateMachine.Animator.Play(_targetingBlendTreeHash);
             stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
         }
     }
