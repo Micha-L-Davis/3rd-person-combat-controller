@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 6970854564779496537}
   - component: {fileID: 6968237616663644794}
   - component: {fileID: 6968237616663644792}
+  - component: {fileID: 5062176749698742051}
   - component: {fileID: 3431473817171562080}
   - component: {fileID: 7054561400634586491}
   - component: {fileID: 5940906719751655130}
@@ -443,6 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 6968237616663644792}
+  <ForceReceiver>k__BackingField: {fileID: 5062176749698742051}
   <Controller>k__BackingField: {fileID: 3431473817171562080}
   <TargetLocker>k__BackingField: {fileID: 5940906719751655130}
   <Animator>k__BackingField: {fileID: 7054561400634586491}
@@ -460,6 +462,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2f042df50f8fb4fbca66039be7c97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5062176749698742051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968237616663644789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b77271a035eb1c4580724584e6661b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 3431473817171562080}
 --- !u!143 &3431473817171562080
 CharacterController:
   m_ObjectHideFlags: 0
