@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
-    private readonly int freeLookBlendTreeHash = Animator.StringToHash("Free Look Blend Tree");
+    private readonly int _freeLookBlendTreeHash = Animator.StringToHash("Free Look Blend Tree");
+    private readonly int _targetingForwardSpeedHash = Animator.StringToHash("TargetingForwardSpeed");
+    private readonly int _targetingRightSpeedHash = Animator.StringToHash("TargetingRightSpeed");
+
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine) {}
 
     public override void Enter()
@@ -25,6 +28,8 @@ public class PlayerTargetingState : PlayerBaseState
 
         Move(movement * stateMachine.TargetingMovementSpeed, deltaTime);
 
+        UpdateAnimator(deltaTime);
+
         FaceTarget();
     }
 
@@ -35,7 +40,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     private void DisengageTarget()
     {
-        stateMachine.Animator.Play(freeLookBlendTreeHash);
+        stateMachine.Animator.Play(_freeLookBlendTreeHash);
         stateMachine.TargetLocker.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
@@ -48,5 +53,20 @@ public class PlayerTargetingState : PlayerBaseState
         movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
 
         return movement;
+    }
+
+    private void UpdateAnimator(float deltaTime)
+    {
+        Vector2 movement = stateMachine.InputReader.MovementValue;
+        Debug.Log(movement.x + " " + movement.y);
+        if(Mathf.Approximately(movement.x, 0f) && Mathf.Approximately(movement.y, 0f))
+        {
+            Debug.Log("at rest");
+            stateMachine.Animator.SetFloat(_targetingForwardSpeedHash, 0f, 0.1f, deltaTime);
+            stateMachine.Animator.SetFloat(_targetingRightSpeedHash, 0f, 0.1f, deltaTime);
+            return;
+        }
+        stateMachine.Animator.SetFloat(_targetingForwardSpeedHash, movement.x, 0.1f, deltaTime);
+        stateMachine.Animator.SetFloat(_targetingRightSpeedHash, movement.y, 0.1f, deltaTime);
     }
 }

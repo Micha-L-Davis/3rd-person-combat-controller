@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class ForceReceiver : MonoBehaviour
 {
-    private float verticalVelocity;
+    private float _verticalVelocity;
 
-    [SerializeField] private CharacterController controller;
+    [SerializeField] private CharacterController _controller;
 
-    public Vector3 Movement => Vector3.up * verticalVelocity;
+    public Vector3 Movement => Vector3.up * _verticalVelocity;
 
     private void Update()
     {
-        if (verticalVelocity < 0f && controller.isGrounded)
+        if (_verticalVelocity < 0f && _controller.isGrounded)
         {
-            verticalVelocity = Physics.gravity.y * Time.deltaTime;
+            _verticalVelocity = Physics.gravity.y * Time.deltaTime;
         }
         else
         {
-            verticalVelocity += Physics.gravity.y * Time.deltaTime;
+            _verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
     }
 }

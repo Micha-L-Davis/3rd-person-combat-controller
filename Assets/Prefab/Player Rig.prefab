@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117661067403112126}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5638227, y: 7.573687, z: 5.8847027}
+  m_LocalRotation: {x: 0.17842482, y: -0.000000020361178, z: 0.0000000036921863, w: 0.98395354}
+  m_LocalPosition: {x: 5.5638227, y: 9.073687, z: 11.884703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4498556344585931892}
@@ -235,8 +235,8 @@ MonoBehaviour:
   m_MaxDollyOut: 5000
   m_MinimumDistance: 1
   m_MaximumDistance: 5000
-  m_MinimumFOV: 3
-  m_MaximumFOV: 60
+  m_MinimumFOV: 60
+  m_MaximumFOV: 65
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
 --- !u!114 &8826941226303857273
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_FollowOffset: {x: 0, y: 1.5, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -594,7 +594,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6895162137582484138}
-  m_LocalRotation: {x: -0.04548976, y: 0.0000000042186605, z: -8.4061114e-10, w: 0.99896485}
+  m_LocalRotation: {x: -0.04548976, y: -0.00000000421866, z: 8.40611e-10, w: 0.99896485}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -794,7 +794,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6895162138390250544}
-  m_LocalRotation: {x: -0.0091723725, y: -0.000000004185342, z: 9.932991e-10, w: 0.9999579}
+  m_LocalRotation: {x: -0.0091723725, y: 0.00000000418534, z: -9.932988e-10, w: 0.9999579}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1101,7 +1101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8672353945634479451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0.00000016554584, y: 0.00000047683716, z: 4.2720017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 499252132418219618}
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_Targets:
   - target: {fileID: 2702775916045501609}
-    weight: 0.25
+    weight: 0.33
     radius: 2
 --- !u!1001 &2641481833689698201
 PrefabInstance:

@@ -12,19 +12,19 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public Vector2 MovementValue { get; private set; }
 
-    private Controls controls;
+    private Controls _controls;
 
     void Start()
     {
-        controls = new Controls();
-        controls.Player.SetCallbacks(this);
+        _controls = new Controls();
+        _controls.Player.SetCallbacks(this);
 
-        controls.Player.Enable();
+        _controls.Player.Enable();
     }
 
     private void OnDestroy()
     {
-        controls.Player.Disable();
+        _controls.Player.Disable();
     }
 
     public void OnJump(InputAction.CallbackContext context)
