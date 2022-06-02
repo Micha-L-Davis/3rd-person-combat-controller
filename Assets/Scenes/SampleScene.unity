@@ -859,15 +859,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17842482
+      value: 0.1784248
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000007705198
+      value: 0.000000017500797
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000013972192
+      value: -0.0000000031735
       objectReference: {fileID: 0}
     - target: {fileID: 1106729726855731879, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_Targets.Array.size
@@ -939,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3331262654998478440, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00000006264684
+      value: 0.00000017853718
       objectReference: {fileID: 0}
     - target: {fileID: 3331262654998478440, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.y
@@ -957,6 +957,10 @@ PrefabInstance:
       propertyPath: m_MinimumFOV
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 4907879654292489699, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
+      propertyPath: <RotationSmoothing>k__BackingField
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6895162137264887234, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -971,11 +975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6895162138390250550, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000004185342
+      value: 0.00000000418534
       objectReference: {fileID: 0}
     - target: {fileID: 6895162138390250550, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 9.932991e-10
+      value: -9.932988e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.x

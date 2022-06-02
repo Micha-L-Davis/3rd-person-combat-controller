@@ -449,7 +449,8 @@ MonoBehaviour:
   <TargetLocker>k__BackingField: {fileID: 5940906719751655130}
   <Animator>k__BackingField: {fileID: 7054561400634586491}
   <FreeLookMovementSpeed>k__BackingField: 6
-  <RotationSmoothing>k__BackingField: 10
+  <TargetingMovementSpeed>k__BackingField: 4
+  <RotationSmoothing>k__BackingField: 500
 --- !u!114 &6968237616663644792
 MonoBehaviour:
   m_ObjectHideFlags: 0
