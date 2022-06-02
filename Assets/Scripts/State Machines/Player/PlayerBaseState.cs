@@ -6,6 +6,22 @@ public abstract class PlayerBaseState : State
 {
     protected PlayerStateMachine stateMachine;
 
+    protected void Move(Vector3 motion, float deltaTime)
+    {
+        stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
+    }
+
+    protected void FaceTarget()
+    {
+        Target target = stateMachine.TargetLocker.CurrentTarget;
+        if ( target == null) return;
+        Vector3 currentPosition = stateMachine.transform.position;
+        Vector3 facingVector = target.transform.position - currentPosition;
+        facingVector.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(facingVector);
+    }
+
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {
         this.stateMachine = stateMachine;

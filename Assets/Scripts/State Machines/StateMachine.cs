@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    private State currentState;
+    private State _currentState;
 
     private void Update()
     {
-        currentState?.Tick(Time.deltaTime);
+        _currentState?.Tick(Time.deltaTime);
     }
 
     public void SwitchState(State state)
     {
-        currentState?.Exit();
-        currentState = state;
-        currentState?.Enter();
+        _currentState?.Exit();
+        _currentState = state;
+        _currentState?.Enter();
     }
 }

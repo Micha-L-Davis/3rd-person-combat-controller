@@ -42,13 +42,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Zoom",
-                    "type": "Value",
-                    "id": "026e1221-8823-43c2-a81d-0b45190cc21c",
-                    "expectedControlType": "Double",
+                    "name": "Target",
+                    "type": "Button",
+                    "id": "2cd11bdb-bd52-4843-bfed-f512055e4b02",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -186,12 +186,23 @@
                 },
                 {
                     "name": "",
-                    "id": "392ba8aa-4a0b-4749-ba60-7f4508b64848",
-                    "path": "<Mouse>/scroll",
+                    "id": "e151d35b-a5ff-42e2-b12c-f99a76eb2f9e",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "Zoom",
+                    "action": "Target",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18bd0d39-07bc-4d72-a11c-3489ef8e78bc",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Target",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
