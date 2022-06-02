@@ -58,14 +58,7 @@ public class PlayerTargetingState : PlayerBaseState
     private void UpdateAnimator(float deltaTime)
     {
         Vector2 movement = stateMachine.InputReader.MovementValue;
-        Debug.Log(movement.x + " " + movement.y);
-        if(Mathf.Approximately(movement.x, 0f) && Mathf.Approximately(movement.y, 0f))
-        {
-            Debug.Log("at rest");
-            stateMachine.Animator.SetFloat(_targetingForwardSpeedHash, 0f, 0.1f, deltaTime);
-            stateMachine.Animator.SetFloat(_targetingRightSpeedHash, 0f, 0.1f, deltaTime);
-            return;
-        }
+
         stateMachine.Animator.SetFloat(_targetingForwardSpeedHash, movement.x, 0.1f, deltaTime);
         stateMachine.Animator.SetFloat(_targetingRightSpeedHash, movement.y, 0.1f, deltaTime);
     }

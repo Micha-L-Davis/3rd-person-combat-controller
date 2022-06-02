@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &313461970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1106729726855731879, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
+  m_PrefabInstance: {fileID: 6895162138002853771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5eb80d8e62d9d145bb50fb783c0f731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +598,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.093594596, y: -5.789705e-10, z: -5.442183e-11, w: 0.9956104}
+  m_LocalRotation: {x: 0.0935946, y: 0.000000007448412, z: -6.944592e-10, w: 0.9956104}
   m_LocalPosition: {x: 0, y: 1.73, z: -3.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -845,11 +856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001892863
+      value: 0.000000018917211
       objectReference: {fileID: 0}
     - target: {fileID: 499252132418219618, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000034324152
+      value: -0.0000000034303447
       objectReference: {fileID: 0}
     - target: {fileID: 3087783204195259793, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_RootOrder
@@ -897,7 +908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3331262654998478440, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00000015389857
+      value: -0.00000015380573
       objectReference: {fileID: 0}
     - target: {fileID: 3331262654998478440, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalPosition.y
@@ -905,31 +916,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6895162137582484136, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000000421866
+      value: 0.0000000042186605
       objectReference: {fileID: 0}
     - target: {fileID: 6895162137582484136, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.40611e-10
+      value: -8.4061114e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6895162138390250550, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000004185342
+      value: 0.00000000418534
       objectReference: {fileID: 0}
     - target: {fileID: 6895162138390250550, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 9.932991e-10
+      value: -9.932988e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.02735959
+      value: -0.027359582
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -8.6105653e-16
+      value: 0.0000000072793167
       objectReference: {fileID: 0}
     - target: {fileID: 6895162139049853281, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.4444474e-16
+      value: -0.0000000015882997
       objectReference: {fileID: 0}
     - target: {fileID: 7126976463906027706, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: _controller
@@ -939,6 +950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 8564222052943233347, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
+      propertyPath: _targetGroup
+      value: 
+      objectReference: {fileID: 313461970}
     - target: {fileID: 8615222623861342137, guid: 05fdc3c7977bf4b4793a974a30743166, type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 0

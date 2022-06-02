@@ -6,18 +6,24 @@ using UnityEngine;
 public class TargetLocker : MonoBehaviour
 {
 	[SerializeField]
-	private List<Target> targets = new List<Target>();
+	private List<Target> _targets = new List<Target>();
 	[SerializeField]
-	private CinemachineTargetGroup targetGroup;
+	private CinemachineTargetGroup _targetGroup;
+	private Camera _mainCamera;
 
 	[field: SerializeField]
 	public Target CurrentTarget { get; private set; }
 
-	private void OnTriggerEnter(Collider other)
+    private void Start()
+    {
+        _mainCamera = Camera.main;
+    }
+
+    private void OnTriggerEnter(Collider other)
 	{
 		if (!other.TryGetComponent<Target>(out Target target)) return;
 
-		targets.Add(target);
+		_targets.Add(target);
 		target.OnDestroyed += RemoveTarget;
 	}
 
@@ -30,9 +36,27 @@ public class TargetLocker : MonoBehaviour
 
 	public bool SelectTarget()
 	{
-		if (targets.Count == 0) return false;
-		CurrentTarget = targets[0];
-		targetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
+		if (_targets.Count == 0) return false;
+		Target closestTarget = null;
+		float distanceToClosest = Mathf.Infinity;
+
+		foreach(Target target in _targets)
+        {
+			Vector2 viewPos = _mainCamera.WorldToViewportPoint(target.transform.position);
+			if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1) continue;
+
+			Vector2 toCenter = viewPos - new Vector2(0.5f, 0.5f);
+			if (toCenter.sqrMagnitude < distanceToClosest)
+            {
+				closestTarget = target;
+				distanceToClosest = toCenter.sqrMagnitude;
+            }
+        }
+
+		if (closestTarget == null) return false;
+
+		CurrentTarget = closestTarget;
+		_targetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
 		return true;
 	}
 
@@ -40,7 +64,7 @@ public class TargetLocker : MonoBehaviour
 	{
 		if (CurrentTarget == null) return;
 
-		targetGroup.RemoveMember(CurrentTarget.transform);
+		_targetGroup.RemoveMember(CurrentTarget.transform);
 		CurrentTarget = null;
 	}
 
@@ -48,11 +72,11 @@ public class TargetLocker : MonoBehaviour
     {
 		if(CurrentTarget == target)
         {
-            targetGroup.RemoveMember(CurrentTarget.transform);
+            _targetGroup.RemoveMember(CurrentTarget.transform);
 			CurrentTarget=null;
         }
 
-		targets.Remove(target);
+		_targets.Remove(target);
 		target.OnDestroyed -= RemoveTarget;
 	}
 }
