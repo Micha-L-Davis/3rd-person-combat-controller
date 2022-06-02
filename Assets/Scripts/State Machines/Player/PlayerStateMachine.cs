@@ -15,6 +15,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField]
     public Animator Animator { get; private set; }
     [field: SerializeField]
+    public AnimationEventListener AnimationEventListener { get; private set; }
+    [field: SerializeField]
     public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField]
     public float TargetingMovementSpeed { get; private set; }
@@ -31,6 +33,5 @@ public class PlayerStateMachine : StateMachine
 
         SwitchState(new PlayerFreeLookState(this));
     }
-
 
 }

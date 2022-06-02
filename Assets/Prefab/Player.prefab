@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 5062176749698742051}
   - component: {fileID: 3431473817171562080}
   - component: {fileID: 7054561400634586491}
+  - component: {fileID: 5218383650225419269}
   - component: {fileID: 5940906719751655130}
   - component: {fileID: 6895162138002853773}
   - component: {fileID: 6895162138002853774}
@@ -448,9 +449,11 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 3431473817171562080}
   <TargetLocker>k__BackingField: {fileID: 5940906719751655130}
   <Animator>k__BackingField: {fileID: 7054561400634586491}
+  <AnimationEventListener>k__BackingField: {fileID: 5218383650225419269}
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationSmoothing>k__BackingField: 500
+  <Attacks>k__BackingField: []
 --- !u!114 &6968237616663644792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 3431473817171562080}
+  _drag: 0.3
 --- !u!143 &3431473817171562080
 CharacterController:
   m_ObjectHideFlags: 0
@@ -513,6 +517,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5218383650225419269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968237616663644789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c6c150ffce0dc4dab6fcf3e2df2415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5940906719751655130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,8 +541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5955717469f2c4e8cc3a8d8ee1acf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: []
-  targetGroup: {fileID: 0}
+  _targets: []
+  _targetGroup: {fileID: 0}
   <CurrentTarget>k__BackingField: {fileID: 0}
 --- !u!54 &6895162138002853773
 Rigidbody:

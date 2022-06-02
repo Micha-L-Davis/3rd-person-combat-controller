@@ -7,6 +7,7 @@ public class PlayerAttackState : PlayerBaseState
 {
     private float _previousFrameTime;
     private Attack _attack;
+    private bool forceIsApplied;
     public PlayerAttackState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         _attack = stateMachine.Attacks[attackIndex];
@@ -15,7 +16,9 @@ public class PlayerAttackState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(_attack.AnimationName, _attack.TransitionDuration);
+        stateMachine.AnimationEventListener.OnHit += TryApplyForce;
     }
+
 
     public override void Tick(float deltaTime)
     {
@@ -23,7 +26,7 @@ public class PlayerAttackState : PlayerBaseState
         FaceTarget();
 
         float normalizedTime = GetNormalizedTime();
-        if(normalizedTime > _previousFrameTime && normalizedTime < 1f)
+        if(normalizedTime >= _previousFrameTime && normalizedTime < 1f)
         {
             if (stateMachine.InputReader.IsAttacking)
             {
@@ -32,9 +35,17 @@ public class PlayerAttackState : PlayerBaseState
         }
         else
         {
-
+            if(stateMachine.TargetLocker.CurrentTarget != null)
+            {
+                stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+            }
+            else
+            {
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            }
         }
-            _previousFrameTime = normalizedTime;
+        
+        _previousFrameTime = normalizedTime;
     }
 
     private void TryComboAttack(float normalizedTime)
@@ -51,6 +62,14 @@ public class PlayerAttackState : PlayerBaseState
             )
         );
     }
+    private void TryApplyForce()
+    {
+        if (forceIsApplied) return;
+        
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * _attack.Force);
+        
+        forceIsApplied = true;
+    }
 
     public override void Exit()
     {
@@ -59,7 +78,7 @@ public class PlayerAttackState : PlayerBaseState
     private float GetNormalizedTime()
     {
         AnimatorStateInfo currentInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
-        AnimatorStateInfo nextInfo = stateMachine.Animator.GetNextAnimatorStateInfo(1);
+        AnimatorStateInfo nextInfo = stateMachine.Animator.GetNextAnimatorStateInfo(0);
 
         if (stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
         {
