@@ -20,6 +20,9 @@ public class PlayerStateMachine : StateMachine
     public float TargetingMovementSpeed { get; private set; }
     [field: SerializeField]
     public float RotationSmoothing { get; private set; }
+    [field: SerializeField]
+    public Attack[] Attacks { get; private set; }
+
     public Transform MainCameraTransform { get; private set; }
 
     void Start()
