@@ -24,6 +24,8 @@ public class PlayerStateMachine : StateMachine
     public float RotationSmoothing { get; private set; }
     [field: SerializeField]
     public Attack[] Attacks { get; private set; }
+    [field: SerializeField]
+    public WeaponDamage WeaponDamage { get; private set; }
 
     public Transform MainCameraTransform { get; private set; }
 

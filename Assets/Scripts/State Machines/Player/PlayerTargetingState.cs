@@ -12,7 +12,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.Play(_targetingBlendTreeHash);
+        stateMachine.Animator.CrossFadeInFixedTime(_targetingBlendTreeHash, animationCrossfadeTime);
         stateMachine.InputReader.TargetEvent += DisengageTarget;
     }
 

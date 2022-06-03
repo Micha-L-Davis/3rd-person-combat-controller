@@ -455,7 +455,26 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationSmoothing>k__BackingField: 500
-  <Attacks>k__BackingField: []
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: Sword-Attack-R3
+    <TransitionDuration>k__BackingField: 0.2
+    <ComboStateIndex>k__BackingField: 1
+    <ComboAttackTime>k__BackingField: 0.6
+    <Force>k__BackingField: 10
+    <Damage>k__BackingField: 10
+  - <AnimationName>k__BackingField: Sword-Attack-R1
+    <TransitionDuration>k__BackingField: 0.2
+    <ComboStateIndex>k__BackingField: 2
+    <ComboAttackTime>k__BackingField: 0.6
+    <Force>k__BackingField: 10
+    <Damage>k__BackingField: 15
+  - <AnimationName>k__BackingField: Sword-Attack-R2
+    <TransitionDuration>k__BackingField: 0.2
+    <ComboStateIndex>k__BackingField: -1
+    <ComboAttackTime>k__BackingField: 0.6
+    <Force>k__BackingField: 15
+    <Damage>k__BackingField: 20
+  <WeaponDamage>k__BackingField: {fileID: 3462348169956238606}
 --- !u!114 &6968237616663644792
 MonoBehaviour:
   m_ObjectHideFlags: 0

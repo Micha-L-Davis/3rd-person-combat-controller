@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class PlayerBaseState : State
 {
     protected PlayerStateMachine stateMachine;
+    protected float animationCrossfadeTime = 0.1f;
 
     protected void Move(Vector3 motion, float deltaTime)
     {
