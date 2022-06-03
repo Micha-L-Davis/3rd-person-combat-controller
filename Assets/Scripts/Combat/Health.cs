@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int _maxHealth = 100;
     private int _health;
 
-    public bool IsDead => _health <= 0;
+    public bool IsDead => _health == 0;
 
     private void Start()
     {
@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
     {
         if (IsDead) return;
 
-        _health -= damage;
+        _health = Mathf.Max(_health - damage, 0);
+
+        Debug.Log(_health);
     }
 }
