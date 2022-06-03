@@ -15,11 +15,18 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField]
     public Animator Animator { get; private set; }
     [field: SerializeField]
+    public AnimationEventListener AnimationEventListener { get; private set; }
+    [field: SerializeField]
     public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField]
     public float TargetingMovementSpeed { get; private set; }
     [field: SerializeField]
     public float RotationSmoothing { get; private set; }
+    [field: SerializeField]
+    public Attack[] Attacks { get; private set; }
+    [field: SerializeField]
+    public WeaponDamage WeaponDamage { get; private set; }
+
     public Transform MainCameraTransform { get; private set; }
 
     void Start()
@@ -28,6 +35,5 @@ public class PlayerStateMachine : StateMachine
 
         SwitchState(new PlayerFreeLookState(this));
     }
-
 
 }

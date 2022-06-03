@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
-    private readonly int _freeLookBlendTreeHash = Animator.StringToHash("Free Look Blend Tree");
+    private readonly int _targetingBlendTreeHash = Animator.StringToHash("Targeting Blend Tree");
     private readonly int _targetingForwardSpeedHash = Animator.StringToHash("TargetingForwardSpeed");
     private readonly int _targetingRightSpeedHash = Animator.StringToHash("TargetingRightSpeed");
 
@@ -12,12 +12,18 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.Animator.CrossFadeInFixedTime(_targetingBlendTreeHash, animationCrossfadeTime);
         stateMachine.InputReader.TargetEvent += DisengageTarget;
     }
 
 
     public override void Tick(float deltaTime)
     {
+        if(stateMachine.InputReader.IsAttacking)
+        {
+            stateMachine.SwitchState(new PlayerAttackState(stateMachine, 0));
+            return;
+        }
         if(stateMachine.TargetLocker.CurrentTarget == null)
         {
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
@@ -40,7 +46,6 @@ public class PlayerTargetingState : PlayerBaseState
 
     private void DisengageTarget()
     {
-        stateMachine.Animator.Play(_freeLookBlendTreeHash);
         stateMachine.TargetLocker.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
