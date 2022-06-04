@@ -6,6 +6,10 @@ public abstract class PlayerBaseState : State
 {
     protected PlayerStateMachine stateMachine;
     protected float animationCrossfadeTime = 0.1f;
+    public PlayerBaseState(PlayerStateMachine stateMachine)
+    {
+        this.stateMachine = stateMachine;
+    }
 
     protected void Move(Vector3 motion, float deltaTime)
     {
@@ -28,8 +32,4 @@ public abstract class PlayerBaseState : State
         stateMachine.transform.rotation = Quaternion.LookRotation(facingVector);
     }
 
-    public PlayerBaseState(PlayerStateMachine stateMachine)
-    {
-        this.stateMachine = stateMachine;
-    }
 }
