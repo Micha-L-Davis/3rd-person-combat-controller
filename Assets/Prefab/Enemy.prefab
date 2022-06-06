@@ -277,6 +277,7 @@ Transform:
   - {fileID: 1984306028415800385}
   - {fileID: 1988004794755193403}
   - {fileID: 1984122493984463733}
+  - {fileID: 5232941785033740306}
   m_Father: {fileID: 1983944914627989301}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -508,6 +509,7 @@ GameObject:
   - component: {fileID: 1988159946681371207}
   - component: {fileID: 2328417807346747818}
   - component: {fileID: 1930611172533947145}
+  - component: {fileID: 3725935968653994686}
   - component: {fileID: 8315833837539839797}
   - component: {fileID: 6634953574531951838}
   - component: {fileID: 7084460463845683620}
@@ -549,10 +551,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Animator>k__BackingField: {fileID: 1930611172533947145}
+  <AnimationEventListener>k__BackingField: {fileID: 3725935968653994686}
   <ForceReceiver>k__BackingField: {fileID: 7084460463845683620}
   <Controller>k__BackingField: {fileID: 8315833837539839797}
   <Agent>k__BackingField: {fileID: 6634953574531951838}
   <ChaseRange>k__BackingField: 8
+  <AttackRange>k__BackingField: 1.5
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: Sword-Attack-R3
+    <TransitionDuration>k__BackingField: 0.3
+    <ComboStateIndex>k__BackingField: 1
+    <ComboAttackTime>k__BackingField: 0.75
+    <Force>k__BackingField: 5
+    <Damage>k__BackingField: 10
+  - <AnimationName>k__BackingField: Sword-Attack-R1
+    <TransitionDuration>k__BackingField: 0.3
+    <ComboStateIndex>k__BackingField: 2
+    <ComboAttackTime>k__BackingField: 0.75
+    <Force>k__BackingField: 7.5
+    <Damage>k__BackingField: 15
+  - <AnimationName>k__BackingField: Sword-Attack-R2
+    <TransitionDuration>k__BackingField: 0.3
+    <ComboStateIndex>k__BackingField: -1
+    <ComboAttackTime>k__BackingField: 0.75
+    <Force>k__BackingField: 10
+    <Damage>k__BackingField: 20
+  <WeaponDamage>k__BackingField: {fileID: 6524855422171852023}
   <MovementSpeed>k__BackingField: 4
 --- !u!95 &1930611172533947145
 Animator:
@@ -573,6 +597,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3725935968653994686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989629894013338985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c6c150ffce0dc4dab6fcf3e2df2415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!143 &8315833837539839797
 CharacterController:
   m_ObjectHideFlags: 0
@@ -585,10 +621,10 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.33
+  m_Radius: 0.66
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.033
+  m_SkinWidth: 0.066
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &6634953574531951838
@@ -1805,3 +1841,80 @@ Transform:
   m_Father: {fileID: 1983918773564495897}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7959950760101639342
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1984169389149078437}
+    m_Modifications:
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.397
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.66298604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.66298527
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.24586551
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.24586649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 139.306
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817817068277913689, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: _myCollider
+      value: 
+      objectReference: {fileID: 8315833837539839797}
+    - target: {fileID: 5241967097882661650, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+--- !u!4 &5232941785033740306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+  m_PrefabInstance: {fileID: 7959950760101639342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6524855422171852023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3817817068277913689, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+  m_PrefabInstance: {fileID: 7959950760101639342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a86bd2b59a804f4ca1791ee8cbbd8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

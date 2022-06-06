@@ -29,4 +29,20 @@ public abstract class EnemyBaseState : State
 
         return distance <= stateMachine.ChaseRange;
     }
+
+    protected bool IsInAttackRange()
+    {
+        float distance = Vector3.Distance(stateMachine.Player.transform.position, stateMachine.transform.position);
+
+        return distance <= stateMachine.AttackRange;
+    }
+
+    protected void FacePlayer()
+    {
+        Vector3 currentPosition = stateMachine.transform.position;
+        Vector3 facingVector = stateMachine.Player.transform.position - currentPosition;
+        facingVector.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(facingVector);
+    }
 }
