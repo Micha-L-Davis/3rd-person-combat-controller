@@ -7,7 +7,7 @@ public class PlayerAttackState : PlayerBaseState
 {
     private float _previousFrameTime;
     private Attack _attack;
-    private bool forceIsApplied;
+    private bool _forceIsApplied;
     public PlayerAttackState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         _attack = stateMachine.Attacks[attackIndex];
@@ -65,11 +65,11 @@ public class PlayerAttackState : PlayerBaseState
     }
     private void TryApplyForce()
     {
-        if (forceIsApplied) return;
+        if (_forceIsApplied) return;
         
         stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * _attack.Force);
         
-        forceIsApplied = true;
+        _forceIsApplied = true;
     }
 
     public override void Exit()
