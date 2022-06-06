@@ -26,9 +26,9 @@ public class EnemyAttackState : EnemyBaseState
         FacePlayer();
 
         float normalizedTime = GetNormalizedTime();
-        if (IsInAttackRange())
+        if (normalizedTime >= _previousFrameTime && normalizedTime < 1f)
         {
-            if (normalizedTime >= _previousFrameTime && normalizedTime < 1f)
+            if (IsInAttackRange())
             {
                 TryComboAttack(normalizedTime);
             }

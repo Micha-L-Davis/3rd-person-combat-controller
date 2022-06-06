@@ -20,6 +20,6 @@ public class Health : MonoBehaviour
 
         _health = Mathf.Max(_health - damage, 0);
 
-        Debug.Log(_health);
+        if (IsDead) Destroy(this.gameObject);
     }
 }

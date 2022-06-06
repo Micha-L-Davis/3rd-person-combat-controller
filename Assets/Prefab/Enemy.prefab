@@ -556,24 +556,24 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 8315833837539839797}
   <Agent>k__BackingField: {fileID: 6634953574531951838}
   <ChaseRange>k__BackingField: 8
-  <AttackRange>k__BackingField: 1.33
+  <AttackRange>k__BackingField: 1.5
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Sword-Attack-R3
-    <TransitionDuration>k__BackingField: 0.2
+    <TransitionDuration>k__BackingField: 0.3
     <ComboStateIndex>k__BackingField: 1
-    <ComboAttackTime>k__BackingField: 0.6
+    <ComboAttackTime>k__BackingField: 0.75
     <Force>k__BackingField: 5
     <Damage>k__BackingField: 10
   - <AnimationName>k__BackingField: Sword-Attack-R1
-    <TransitionDuration>k__BackingField: 0.2
+    <TransitionDuration>k__BackingField: 0.3
     <ComboStateIndex>k__BackingField: 2
-    <ComboAttackTime>k__BackingField: 0.6
+    <ComboAttackTime>k__BackingField: 0.75
     <Force>k__BackingField: 7.5
     <Damage>k__BackingField: 15
   - <AnimationName>k__BackingField: Sword-Attack-R2
-    <TransitionDuration>k__BackingField: 0.2
+    <TransitionDuration>k__BackingField: 0.3
     <ComboStateIndex>k__BackingField: -1
-    <ComboAttackTime>k__BackingField: 0.6
+    <ComboAttackTime>k__BackingField: 0.75
     <Force>k__BackingField: 10
     <Damage>k__BackingField: 20
   <WeaponDamage>k__BackingField: {fileID: 6524855422171852023}
@@ -621,10 +621,10 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.33
+  m_Radius: 0.66
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.033
+  m_SkinWidth: 0.066
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &6634953574531951838
@@ -1892,6 +1892,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 139.306
       objectReference: {fileID: 0}
+    - target: {fileID: 3817817068277913689, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: _myCollider
+      value: 
+      objectReference: {fileID: 8315833837539839797}
     - target: {fileID: 5241967097882661650, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
       propertyPath: m_Name
       value: Sword
