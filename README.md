@@ -1,5 +1,5 @@
 # 3rd-person-combat-controller
-A Unity 3D character controller with a 3rd person camera and combat mechanics.
+A Unity 3D state machine-based character controller with a 3rd person camera, combat mechanics, and enemy state machine-based AI.
 
 ---
 
