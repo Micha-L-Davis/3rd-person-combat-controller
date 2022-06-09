@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 4666105659094913802}
   - component: {fileID: 6895162138002853773}
   - component: {fileID: 6895162138002853774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -365,15 +365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f7719ae27c8c046a1c40eb5721c6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InputReader>k__BackingField: {fileID: 6968237616663644792}
   <ForceReceiver>k__BackingField: {fileID: 5062176749698742051}
   <Controller>k__BackingField: {fileID: 3431473817171562080}
-  <TargetLocker>k__BackingField: {fileID: 5940906719751655130}
   <Animator>k__BackingField: {fileID: 7054561400634586491}
   <AnimationEventListener>k__BackingField: {fileID: 5218383650225419269}
-  <FreeLookMovementSpeed>k__BackingField: 6
-  <TargetingMovementSpeed>k__BackingField: 4
-  <RotationSmoothing>k__BackingField: 500
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Sword-Attack-R3
     <TransitionDuration>k__BackingField: 0.2
@@ -394,6 +389,11 @@ MonoBehaviour:
     <Force>k__BackingField: 10
     <Damage>k__BackingField: 20
   <WeaponDamage>k__BackingField: {fileID: 3462348169956238606}
+  <InputReader>k__BackingField: {fileID: 6968237616663644792}
+  <TargetLocker>k__BackingField: {fileID: 5940906719751655130}
+  <FreeLookMovementSpeed>k__BackingField: 6
+  <TargetingMovementSpeed>k__BackingField: 4
+  <RotationSmoothing>k__BackingField: 500
 --- !u!114 &913901448577373393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec103f301fbef894692a67abcb75e4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 150
+  _maxHealth: 300
 --- !u!114 &6968237616663644792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4417,6 +4417,10 @@ PrefabInstance:
     - target: {fileID: 5241967097882661650, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
       propertyPath: m_Name
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984704270040216106, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}

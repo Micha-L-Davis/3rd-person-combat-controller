@@ -515,7 +515,8 @@ GameObject:
   - component: {fileID: 7084460463845683620}
   - component: {fileID: 8908102190506698892}
   - component: {fileID: 400201596293123169}
-  m_Layer: 0
+  - component: {fileID: 6446391793085073888}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,13 +551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fc0c3fc6617384695e947aa8bfc640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Animator>k__BackingField: {fileID: 1930611172533947145}
-  <AnimationEventListener>k__BackingField: {fileID: 3725935968653994686}
   <ForceReceiver>k__BackingField: {fileID: 7084460463845683620}
   <Controller>k__BackingField: {fileID: 8315833837539839797}
-  <Agent>k__BackingField: {fileID: 6634953574531951838}
-  <ChaseRange>k__BackingField: 8
-  <AttackRange>k__BackingField: 1.5
+  <Animator>k__BackingField: {fileID: 1930611172533947145}
+  <AnimationEventListener>k__BackingField: {fileID: 3725935968653994686}
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Sword-Attack-R3
     <TransitionDuration>k__BackingField: 0.3
@@ -577,6 +575,9 @@ MonoBehaviour:
     <Force>k__BackingField: 10
     <Damage>k__BackingField: 20
   <WeaponDamage>k__BackingField: {fileID: 6524855422171852023}
+  <Agent>k__BackingField: {fileID: 6634953574531951838}
+  <ChaseRange>k__BackingField: 8
+  <AttackRange>k__BackingField: 1.5
   <MovementSpeed>k__BackingField: 4
 --- !u!95 &1930611172533947145
 Animator:
@@ -688,6 +689,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+--- !u!114 &6446391793085073888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989629894013338985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6beaf59715cc2ef4c8c5e3820fab7df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponLogic: {fileID: 1353184236812355204}
 --- !u!1 &1989644721495002669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,6 +1914,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 5241967097882661650, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984704270040216106, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
 --- !u!4 &5232941785033740306 stripped
@@ -1907,12 +1929,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2803571989867488444, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
   m_PrefabInstance: {fileID: 7959950760101639342}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1353184236812355204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8984704270040216106, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
+  m_PrefabInstance: {fileID: 7959950760101639342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6524855422171852023 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3817817068277913689, guid: 34f30f3087333a145a2478e09a1ac901, type: 3}
   m_PrefabInstance: {fileID: 7959950760101639342}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1353184236812355204}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a86bd2b59a804f4ca1791ee8cbbd8be, type: 3}

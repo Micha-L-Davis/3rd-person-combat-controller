@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponDamage : MonoBehaviour
 {
-    [SerializeField] private Collider _myCollider;
+    //[SerializeField] private Collider _myCollider;
     private List<Collider> triggeredColliders = new List<Collider>();
     private int _damage;
 
@@ -15,7 +15,7 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == _myCollider) return;
+        //if (other == _myCollider) return;
 
         if (triggeredColliders.Contains(other)) return;
 
