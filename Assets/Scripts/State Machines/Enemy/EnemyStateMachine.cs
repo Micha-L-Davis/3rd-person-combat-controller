@@ -3,16 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyStateMachine : StateMachine
+public class EnemyStateMachine : ActorStateMachine
 {
-    [field: SerializeField]
-    public Animator Animator { get; private set; }
-    [field: SerializeField]
-    public AnimationEventListener AnimationEventListener { get; private set; }
-    [field: SerializeField]
-    public ForceReceiver ForceReceiver { get; private set; }
-    [field: SerializeField]
-    public CharacterController Controller { get; private set; }
     [field: SerializeField]
     public NavMeshAgent Agent { get; private set; }
 
@@ -20,10 +12,6 @@ public class EnemyStateMachine : StateMachine
     public float ChaseRange { get; private set; }
     [field: SerializeField]
     public float AttackRange { get; private set; }
-    [field: SerializeField]
-    public Attack[] Attacks { get; private set; }
-    [field: SerializeField]
-    public WeaponDamage WeaponDamage { get; private set; }
     [field: SerializeField]
     public float MovementSpeed { get; private set; }
     public GameObject Player { get; private set; }
